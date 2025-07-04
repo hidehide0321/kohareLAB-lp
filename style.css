@@ -1,0 +1,233 @@
+body {
+    font-family: 'Yusei Magic', sans-serif; /* 手書き風フォント */
+    background-color: #faf8f0; /* 画用紙のようなクリーム色 */
+    color: #5a4a42; /* 温かみのある茶色 */
+    line-height: 1.8;
+}
+
+header {
+    max-width: 800px; /* コンテンツ部分と幅を合わせる */
+    margin: 2rem auto 0; /* 上部に余白を設け、中央に配置 */
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px; /* 少し角丸に */
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #f3a68c; /* コーラルピンク */
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px dotted #f3a68c;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-text {
+    text-align: center;
+    font-size: 1.8rem; /* 大きめのフォントサイズ */
+    color: #f3a68c; /* h2と同じ色 */
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+#gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* 少し傾ける */
+    transition: transform 0.3s ease;
+}
+
+#gallery .grid > *:nth-child(even) img {
+    transform: rotate(2deg); /* 交互に傾きを変える */
+}
+
+#gallery img:hover {
+    transform: scale(1.05) rotate(0deg) !important; /* ホバーでまっすぐに */
+}
+
+#events ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#events li {
+    background-color: #fffbe3; /* 明るい黄色 */
+    color: #8c6d3f;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px 20px 5px 20px; /* 不規則な角丸 */
+    font-weight: normal;
+    border: 2px dashed #f3a68c;
+    transition: transform 0.2s ease-in-out;
+}
+
+#events li:hover {
+    transform: translateY(-5px);
+    cursor: pointer; /* カーソルをポインターに変更してインタラクティブ性を示す */
+}
+
+.venue-map-container {
+    position: relative;
+    max-width: 80%; /* 親要素の80%の幅に制限 */
+    margin-left: auto; /* 左側の余白を自動調整して右寄せ */
+}
+
+.venue-map-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.floor-label {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #5a4a42;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    border: 2px solid;
+    left: -20%;
+}
+
+.floor-description {
+    position: absolute;
+    color: #5a4a42;
+    font-size: 0.84rem;
+    left: -20%; /* ラベルと同じ左寄せ */
+    width: 15%; /* ラベルの幅に合わせて調整 */
+    text-align: left;
+}
+
+.floor-3f {
+    top: 15%;
+    border-color: #81c784; /* 緑 */
+    color: #388e3c;
+}
+
+.floor-2f {
+    top: 45%;
+    border-color: #ffb74d; /* オレンジ */
+    color: #f57c00;
+}
+
+.floor-1f {
+    top: 75%;
+    border-color: #f06292; /* ピンク */
+    color: #c2185b;
+}
+
+/* 説明文のtop位置を調整 */
+.floor-3f + .floor-description {
+    top: calc(15% + 40px); /* 3Fラベルの下に配置 */
+}
+
+.floor-2f + .floor-description {
+    top: calc(45% + 40px); /* 2Fラベルの下に配置 */
+}
+
+.floor-1f + .floor-description {
+    top: calc(75% + 40px); /* 1Fラベルの下に配置 */
+}
+
+.align-right {
+    text-align: right;
+    display: block;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    border-top: 3px dashed #f3a68c;
+    color: #5a4a42;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header,
+    main {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .highlight-text {
+        font-size: 1.5rem;
+    }
+
+    #gallery .grid {
+        grid-template-columns: 1fr; /* 1列表示 */
+    }
+
+    #events li {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .venue-map-container {
+        max-width: 95%; /* 画面幅に合わせて調整 */
+        margin: 0 auto; /* 中央寄せ */
+    }
+
+    .floor-label,
+    .floor-description {
+        position: static; /* 絶対配置を解除 */
+        text-align: center;
+        width: auto;
+        margin: 0.5rem auto; /* 中央寄せ */
+        left: auto; /* leftプロパティをリセット */
+    }
+
+    .floor-label {
+        font-size: 1.2rem;
+        padding: 3px 10px;
+    }
+
+    .floor-description {
+        font-size: 0.7rem;
+    }
+
+    /* 説明文のtop位置調整をリセット */
+    .floor-3f + .floor-description,
+    .floor-2f + .floor-description,
+    .floor-1f + .floor-description {
+        top: auto;
+    }
+}
