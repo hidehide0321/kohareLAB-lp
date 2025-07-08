@@ -99,8 +99,8 @@ h2 {
 
 .venue-map-container {
     position: relative;
-    max-width: 80%; /* 親要素の80%の幅に制限 */
-    margin-left: auto; /* 左側の余白を自動調整して右寄せ */
+    max-width: 100%; /* 全体に表示 */
+    margin: 0 auto; /* 中央寄せ */
 }
 
 .venue-map-container img {
@@ -176,6 +176,33 @@ footer {
     color: #5a4a42;
 }
 
+/* 応援サポートセクションのグリッドレイアウト */
+#support .grid-col-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 横1列に2枚表示 */
+    gap: 1.5rem;
+}
+
+#support .grid-col-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列表示 */
+    gap: 1.5rem;
+}
+
+#support .grid-col-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5列表示 */
+    gap: 1.5rem;
+}
+
+#support img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
     header,
@@ -229,5 +256,12 @@ footer {
     .floor-2f + .floor-description,
     .floor-1f + .floor-description {
         top: auto;
+    }
+
+    /* 応援サポートセクションのレスポンシブ対応 */
+    #support .grid-col-1,
+    #support .grid-col-3,
+    #support .grid-col-5 {
+        grid-template-columns: 1fr; /* モバイルでは1列表示 */
     }
 }
