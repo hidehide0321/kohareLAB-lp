@@ -98,68 +98,15 @@ h2 {
 }
 
 .venue-map-container {
-    position: relative;
-    max-width: 100%; /* 全体に表示 */
-    margin: 0 auto; /* 中央寄せ */
+    text-align: center;
 }
 
 .venue-map-container img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
     border: 4px solid white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.floor-label {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #5a4a42;
-    padding: 5px 15px;
-    border-radius: 30px;
-    font-size: 1.5rem;
-    border: 2px solid;
-    left: -20%;
-}
-
-.floor-description {
-    position: absolute;
-    color: #5a4a42;
-    font-size: 0.84rem;
-    left: -20%; /* ラベルと同じ左寄せ */
-    width: 15%; /* ラベルの幅に合わせて調整 */
-    text-align: left;
-}
-
-.floor-3f {
-    top: 15%;
-    border-color: #81c784; /* 緑 */
-    color: #388e3c;
-}
-
-.floor-2f {
-    top: 45%;
-    border-color: #ffb74d; /* オレンジ */
-    color: #f57c00;
-}
-
-.floor-1f {
-    top: 75%;
-    border-color: #f06292; /* ピンク */
-    color: #c2185b;
-}
-
-/* 説明文のtop位置を調整 */
-.floor-3f + .floor-description {
-    top: calc(15% + 40px); /* 3Fラベルの下に配置 */
-}
-
-.floor-2f + .floor-description {
-    top: calc(45% + 40px); /* 2Fラベルの下に配置 */
-}
-
-.floor-1f + .floor-description {
-    top: calc(75% + 40px); /* 1Fラベルの下に配置 */
 }
 
 .align-right {
@@ -177,21 +124,15 @@ footer {
 }
 
 /* 応援サポートセクションのグリッドレイアウト */
-#support .grid-col-1 {
+#support .grid-col-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 横1列に2枚表示 */
+    grid-template-columns: repeat(2, 1fr); /* 横2列に2枚表示 */
     gap: 1.5rem;
 }
 
-#support .grid-col-3 {
+#support .support-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3列表示 */
-    gap: 1.5rem;
-}
-
-#support .grid-col-5 {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5列表示 */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
 }
 
