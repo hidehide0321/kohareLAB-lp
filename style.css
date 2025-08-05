@@ -208,3 +208,20 @@ footer {
 .button:hover {
     background-color: #e88a70; /* 少し濃い色 */
 }
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.social-buttons img {
+    width: 120px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-buttons img:hover {
+    transform: scale(1.05);
+}
