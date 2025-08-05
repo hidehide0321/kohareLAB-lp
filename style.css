@@ -212,12 +212,15 @@ footer {
 .social-buttons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 2rem;
     flex-wrap: nowrap;
 }
 
 .social-buttons img {
     width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 15px;
     transition: transform 0.3s ease;
 }
